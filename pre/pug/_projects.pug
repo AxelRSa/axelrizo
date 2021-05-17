@@ -1,0 +1,11 @@
+mixin project(name, dirImg, description, link, linkDescription, link2State, link2Link, link2Label)
+	.projectContainer 
+		h2=name 
+		a(href=link target="_blank"): img(src=dirImg, alt="")
+		p=description 
+		.linksContainer
+			a(href=link target="_blank")=linkDescription
+				span 
+			if (link2State)
+				a(href=link2Link target="_blank")=link2Label
+					span

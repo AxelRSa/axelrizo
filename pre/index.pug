@@ -1,0 +1,146 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Axel Rizo
+		link(rel="stylesheet", href="index.css")
+		link(id="pageIcon" rel="shortcut icon" href="img/pageIconHome.png")
+	body
+		//- alert view landscape
+		.alertLandscape#alertLandscape
+			p This page works better in portrait view.
+			img(src="img/alertLandscape.png", alt="")
+
+		//- loader
+		.loader
+			.loader_blackCircle
+			.loader_animation
+			.loader_animation
+			.loader_animation
+			.loader_animation
+			.loader_text
+				h1 Axel
+					span Rizo 
+		//- loader
+		//- header
+		header: nav: ul#menu.menu
+			li: a#homeLink.link(href="#home" onclick="menuOut()")  HOME 
+			li: a#aboutLink(href="#about" onclick="menuOut()") ABOUT 
+			li: a(href="#home" onclick="menuOut()") Axel #[span#rizo Rizo] #[span#circle]
+			li: a#projectsLink(href="#projects" onclick="menuOut()") PROJECTS
+			li: a#contactLink(href="#contact" onclick="menuOut()") CONTACT
+			li 
+				a(onclick="menu()") 
+					div 
+					div 
+					div 
+			li 
+		//- header
+		//- slider
+		.slider
+			ul
+				li
+				li
+				li
+				li
+				li
+				li
+		//- slider
+		//- home
+		#home.home
+			.welcome
+				h2.welcomeTitle Hello,
+					span.welcomeTitleSpan
+				h2.welcomeTitle My name is
+					span.welcomeTitleSpan
+				h2.welcomeTitle Axel #[b Rizo]
+					span.welcomeTitleSpan
+			a(href="#projects" onclick="projects()") PROJECTS
+				span
+		//- home
+		//- about
+		#about.about
+			.aboutContainer 
+				//- Top
+				#about1.aboutTop 
+					//- html
+					.aboutHtml.top
+						canvas#htmlCanvas(width = "300" height = "300")
+					//- css
+					.aboutCss.bottom
+						canvas#cssCanvas(width = "300" height = "300")
+				//- Bottom
+				#about2.aboutBottom 
+					//- Pug
+					.aboutPug.top
+						canvas#pugCanvas(width = "300" height = "300")
+					//- Sass
+					.aboutSass.bottom
+						canvas#sassCanvas(width = "300" height = "300")
+					//- Center
+				#about3.aboutCenter
+					//- Js
+					.aboutJs
+						canvas#jsCanvas(width = "300" height = "300")
+		//- about
+		//- projects
+		#projects.projects
+			include pug/_projects
+			//-mesk
+			+project("Mesk",
+			"img/logo2.png",
+			"An upgrade to a youtuber's webpage",
+			"pages/mesk/index.html",
+			"My page",
+			true,
+			"https://www.mesk.mx/",
+			"Original Page")
+			//-gamerLowCost
+			+project("Gamer Low Cost",
+			"img/logo1.png",
+			"My first proyect imiting Cyberpuerta",
+			"pages/gamerLowCost/index.html",
+			"My page",
+			true,
+			"https://www.cyberpuerta.mx/",
+			"Original Page")
+		//- projects
+		//- contact
+		#contact.contact
+			.contactContainer
+				form(action="https://formspree.io/f/mgepjrqo" method="POST" id="contactForm") 
+					//- email
+					.contactForm.contactEmail
+						label(for="") E-mail: 
+						.contactInput
+							input(name="e-mail" type="email" maxlength="75" required)
+					//- subject
+					.contactForm.contactSubject 
+						label(for="") Subject:
+						.contactInput
+							input(name="subject" type="text" maxlength="150" required)
+					//- message
+					.contactForm.contactMessage
+						label(for="") Message:
+						.contactInput
+							textarea#contactTextArea(name="message" required) 
+					//- button
+					.contactSubmit 
+						.contactBtn
+							button(type="submit") Send
+					#status
+		//- contact
+		//- arrowSvg
+		include pug/_svgArrow
+		include pug/_svgPoint
+		//- SliderControl
+		#sliderControl.sliderControl
+			+arrowSvg("arrowLeft()","sliderArrow left", "sliderArrowLeft")
+			+point("slider1()","sliderPoint","point1","circle1")
+			+point("slider2()","sliderPoint","point2","circle2")
+			+point("slider3()","sliderPoint","point3","circle3")
+			+arrowSvg("arrowRight()","sliderArrow right", "sliderArrowRight")
+		script(src="index.js")
+		script(src="email.js") 

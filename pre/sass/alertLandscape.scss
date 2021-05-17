@@ -1,0 +1,17 @@
+#alertLandscape {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+	z-index: 10000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	font-family: $font-text;
+	font-size: 2rem;
+	text-align: center;
+
+	&.active {
+		display: flex;
+	}
+}

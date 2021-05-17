@@ -1,0 +1,226 @@
+.contact {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.contactContainer {
+		width: 80%;
+		height: 80%;
+		min-height: 355px;
+		position: relative;
+		font-family: $font-text;
+		font-size: 1.3rem;
+
+
+
+		&::after {
+			content: "";
+			background-color: $color-basic-black;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: .7;
+			z-index: -1;
+
+		}
+
+		form {
+			color: $color-basic-white;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+
+
+			.contactForm {
+				display: flex;
+				padding: .8em;
+
+				>label {
+					min-width: 5em;
+				}
+
+				.contactInput {
+					position: relative;
+
+					>input {
+						background-color: inherit;
+						border: none;
+						color: $color-basic-white;
+						font-size: .9em;
+						padding: 5px;
+						width: calc(100% - 10px);
+						font-family: $font-text;
+					}
+
+					&::after {
+						content: "";
+						background-color: $color-basic-white;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						opacity: 1;
+						z-index: -1;
+						border-radius: .2em;
+					}
+				}
+
+			}
+
+			.contactEmail {
+
+				.contactInput {
+					width: 100%;
+					max-width: 15em;
+
+				}
+			}
+
+			.contactSubject {
+
+
+				.contactInput {
+					width: 100%;
+					max-width: 25em;
+				}
+			}
+
+			.contactMessage {
+				flex-grow: 1;
+
+
+				.contactInput {
+					width: 100%;
+					height: 100%;
+
+					>textarea {
+						font-family: $font-text;
+						background-color: inherit;
+						border: none;
+						color: $color-basic-white;
+						font-size: .9em;
+						padding: 10px;
+						width: calc(100% - 10px);
+						height: calc(100% - 20px);
+						resize: none;
+						overflow: auto;
+					}
+				}
+			}
+
+			.contactSubmit {
+				display: flex;
+				justify-content: space-between;
+				padding: 0 17px 10px;
+
+				.contactBtn {
+					display: inline-block;
+					border: $color-basic-white .05em solid;
+					position: relative;
+					z-index: 10;
+					font-family: $font-text;
+					border-radius: 2px;
+
+
+					>button {
+						background-color: inherit;
+						color: $color-basic-white;
+						border: none;
+						padding: 0.2em 0.8em;
+						;
+						font-family: $font-text;
+						font-size: 1.5rem;
+
+
+						&:hover {
+							cursor: pointer;
+						}
+					}
+
+					&::after {
+						content: "";
+						width: 0;
+						height: 100%;
+						background-color: $color-principal-blue;
+						position: absolute;
+						top: 0;
+						left: 0;
+						transition: width .3s;
+						z-index: -1;
+					}
+
+					&:hover::after {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.contact {
+		.contactContainer {
+			>form {
+				.contactForm {
+					flex-direction: column;
+					padding-bottom: 0;
+
+					>label {
+						padding-bottom: 15px;
+					}
+				}
+
+				.contactSubmit {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+// status message
+
+#status {
+	color: $color-basic-white;
+	font-family: $font-text;
+	font-size: 1rem;
+	padding: 0.2em 0.8em;
+	z-index: 100;
+	top: -26px;
+	right: 0;
+	opacity: 0;
+	position: absolute;
+}
+
+#status.success {
+	background-color: $color-principal-blue;
+	animation: status 5s forwards;
+}
+
+#status.error {
+	background-color: $color-principal-red;
+	animation: status 5s forwards;
+}
+
+@keyframes status {
+	0% {
+		opacity: 0;
+	}
+
+	30% {
+		opacity: 1;
+	}
+
+	70% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,57 @@
+// colors palette
+// basics
+$color-basic-black:#000000;
+$color-basic-white:#ffffff;
+// principal
+$color-principal-red:#F5271F;
+$color-principal-green:#07F55A;
+$color-principal-yellow:#F5D138;
+$color-principal-blue:#141AF5;
+
+// complementary
+$color-complementary:#00A83B;
+$color-complementary-ligther:#20F56A;
+// colors palette
+
+// fonts
+// logo
+@font-face {
+	font-family: oswald;
+	src: url(fonts/oswald/static/Oswald-Regular.ttf);
+}
+
+// header
+@font-face {
+	font-family: montserrat;
+	src: url(fonts/montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+	font-family: montserrat-bold;
+	src: url(fonts/montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+	font-family: montserrat-light;
+	src: url(fonts/montserrat/Montserrat-Light.ttf);
+}
+
+// text
+@font-face {
+	font-family: raleway;
+	src: url(fonts/raleway/static/Raleway-Regular.ttf);
+}
+
+// variables
+$font-logo: oswald,
+sans-serif;
+$font-header: montserrat,
+sans-serif;
+$font-header-bold: montserrat-bold,
+sans-serif;
+$font-header-light: montserrat-light,
+sans-serif;
+$font-text: raleway,
+sans-serif;
+// fonts
+//Pasar colores a rgb para usar rgba

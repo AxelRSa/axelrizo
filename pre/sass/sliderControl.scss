@@ -1,0 +1,43 @@
+.sliderControl {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 10px;
+	visibility: hidden;
+
+	.sliderArrow {
+		width: 40px;
+		height: 60px;
+		cursor: pointer;
+		transition: opacity .3s;
+
+		&.left {
+			transform: rotate(180deg);
+			margin-left: 20px;
+		}
+
+		&.right {
+			margin-right: 20px;
+		}
+	}
+
+	.sliderPoint {
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+
+		#circle1,
+		#circle2,
+		#circle3 {
+			transition: all .3s;
+		}
+	}
+}
+
+@media (max-width: 950px) {
+	.sliderControl {
+		visibility: visible;
+	}
+}

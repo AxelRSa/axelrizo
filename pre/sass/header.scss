@@ -1,0 +1,263 @@
+header {
+	position: absolute;
+	width: 100vw;
+	margin: auto;
+	z-index: 1000;
+
+	>nav {
+
+		>ul {
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+			padding-top: .5rem;
+			background-color: rgba($color-basic-black, 0.8);
+			height: 30px;
+
+			>li {
+				font-family: $font-header-bold;
+
+				>a {
+					font-variant: small-caps;
+
+				}
+
+			}
+
+			>li:nth-child(1),
+			>li:nth-child(2),
+			>li:nth-child(4),
+			>li:nth-child(5) {
+				font-size: 1.1rem;
+				box-sizing: border-box;
+				letter-spacing: .05rem;
+				line-height: 20px;
+
+				>a {
+					color: $color-basic-white;
+				}
+			}
+
+			>li:nth-child(6),
+			li:nth-child(7) {
+				display: none;
+			}
+
+			>li:nth-child(3) {
+				font-family: $font-logo;
+				border-radius: 50%;
+				position: relative;
+				top: -245px;
+				height: 300px;
+				width: 300px;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+
+				>a {
+					color: $color-basic-black;
+					font-size: 2rem;
+					padding-bottom: 20px;
+					z-index: 100;
+
+					>span {
+						color: $color-principal-red;
+						transition: color .3s;
+					}
+				}
+			}
+		}
+	}
+}
+
+#circle {
+	width: 100%;
+	height: 100%;
+	background-color: $color-basic-white;
+	border-radius: 50%;
+	position: absolute;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	border: $color-basic-white 4px solid;
+	border-bottom: $color-principal-red 4px solid;
+	border-left: $color-principal-red 4px solid;
+	animation: circular-move 10s linear infinite;
+	z-index: -1;
+	transition: all .3s;
+}
+
+#homeLink:hover {
+	color: $color-principal-red;
+	transition: all .3s;
+}
+
+#aboutLink:hover {
+	color: $color-principal-green;
+	transition: all .3s;
+}
+
+#projectsLink:hover {
+	color: $color-principal-yellow;
+	transition: all .3s;
+}
+
+
+#contactLink:hover {
+	color: $color-principal-blue;
+	transition: all .3s;
+}
+
+@media (max-width: 768px) {
+	header>nav>ul {
+		padding-top: 0;
+		position: relative;
+		height: 40px;
+		background-color: rgba($color-basic-black, 0.9);
+
+		li:nth-child(1),
+		li:nth-child(2),
+		li:nth-child(4),
+		li:nth-child(5) {
+			display: none;
+		}
+
+		>li:nth-child(3) {
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			height: 80px;
+
+			>a {
+				position: absolute;
+				top: -5px;
+				left: 5px;
+				font-size: 1.5rem;
+			}
+		}
+
+		li:nth-child(6) {
+			display: flex;
+			flex-direction: column;
+			margin-right: 10px;
+			box-sizing: content-box;
+			width: 30px;
+			justify-content: center;
+			position: absolute;
+			top: 0px;
+			right: 5px;
+			height: 40px;
+			cursor: pointer;
+
+			div {
+				height: 5px;
+				width: 30px;
+				background-color: white;
+				margin-top: 3px;
+				border-radius: 15px;
+				transition: .3s;
+			}
+
+			>div:nth-child(1) {
+				transform: rotate(-45deg);
+				position: absolute;
+				top: 15px;
+			}
+
+			>div:nth-child(2) {
+				opacity: 1;
+			}
+
+			>div:nth-child(3) {
+				transform: rotate(45deg);
+				position: absolute;
+				top: 15px;
+			}
+		}
+
+		li:nth-child(7) {
+			display: block;
+		}
+	}
+
+	#circle {
+		height: 300px;
+		width: 300px;
+		top: -240px;
+		left: -120px;
+	}
+}
+
+.active {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	height: 100vh;
+	transition: height .3s;
+	padding-bottom: 40px;
+
+	li:nth-child(1),
+	li:nth-child(2),
+	li:nth-child(4),
+	li:nth-child(5) {
+		display: flex;
+		z-index: 1000;
+		justify-content: center;
+		font-size: 2rem;
+	}
+
+	li:nth-child(6) {
+		>a {
+			>div {
+				transition: all .3s;
+			}
+
+			>div:nth-child(1) {
+				transform: rotate(45deg);
+				position: absolute;
+				top: 15px;
+			}
+
+			>div:nth-child(2) {
+				opacity: 0;
+			}
+
+			>div:nth-child(3) {
+				transform: rotate(-45deg);
+				top: 15px;
+				position: absolute;
+			}
+		}
+	}
+
+	>li:nth-child(3) {
+		position: relative;
+		display: flex;
+		width: 100vw;
+		order: -1;
+		justify-content: center;
+		align-items: center;
+		height: 150px;
+
+		>a {
+			position: relative;
+			font-size: 3rem;
+			padding: 0;
+			width: fit-content;
+			text-align: center;
+			top: 100px;
+			line-height: 10px;
+
+			#circle {
+				position: relative;
+				display: block;
+				margin: auto;
+				width: 200px;
+				height: 200px;
+				top: -100px;
+				left: 0;
+			}
+		}
+	}
+}

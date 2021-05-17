@@ -1,0 +1,158 @@
+//times for animation
+//animation delay
+$animationDelay: 2s;
+//time that wait in appear the text before the span
+$timeToSpan: 0.5s;
+$H2time1: $animationDelay;
+$Spantime1: $H2time1 - 0.5s;
+$H2time2: $animationDelay + 1s;
+$Spantime2: $H2time2 - 0.5s;
+$H2time3: $animationDelay + 2s;
+$Spantime3: $H2time3 - 0.5s;
+
+.home {
+ font-family: $font-header;
+ justify-content: space-around;
+ align-items: center;
+ display: flex;
+
+ .welcome {
+  > h2 {
+   font-size: 5.5em;
+   position: relative;
+   padding-left: 3px;
+   width: fit-content;
+   color: transparent;
+   animation: welcomeRevealText 1s forwards;
+
+   > b {
+    color: transparent;
+    animation: welcomeRevealTextRed 1s forwards;
+   }
+
+   > span {
+    height: 100%;
+    width: 0;
+    display: block;
+    background-color: $color-principal-red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1px;
+    animation: welcomeRevealSpan 1s forwards;
+   }
+  }
+
+  > h2:nth-child(1) {
+   animation-delay: $H2time1;
+
+   > span {
+    animation-delay: $Spantime1;
+   }
+  }
+
+  > h2:nth-child(2) {
+   animation-delay: $H2time2;
+
+   > span {
+    animation-delay: $Spantime2;
+   }
+  }
+
+  > h2:nth-child(3) {
+   animation-delay: $H2time3;
+
+   > b {
+    animation-delay: $H2time3;
+   }
+
+   > span {
+    animation-delay: $Spantime3;
+   }
+  }
+ }
+
+ > a {
+  color: $color-basic-white;
+  padding: 0.2em 0.8em;
+  border: $color-basic-white 0.05em solid;
+  border-radius: 2px;
+  position: relative;
+  font-size: 3rem;
+  animation: appearAnimationButton 2s 4.5s forwards;
+  opacity: 0;
+
+  > span {
+   height: 100%;
+   width: 0;
+   display: block;
+   background-color: $color-principal-red;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   transition: all 0.4s;
+  }
+
+  &:hover > span {
+   width: 100%;
+  }
+ }
+}
+
+//span in the welcome
+@keyframes welcomeRevealSpan {
+ 50% {
+  width: 100%;
+  left: 0;
+ }
+
+ 100% {
+  width: 0;
+  left: 100%;
+ }
+}
+
+// text in te welcome
+@keyframes welcomeRevealText {
+ 100% {
+  color: $color-basic-white;
+ }
+}
+
+@keyframes welcomeRevealTextRed {
+ 100% {
+  color: $color-principal-red;
+ }
+}
+
+// button
+@keyframes appearAnimationButton {
+ 0% {
+  opacity: 0;
+ }
+
+ 100% {
+  opacity: 1;
+ }
+}
+
+@media (max-width: 1025px) {
+ .home {
+  flex-direction: column;
+ }
+}
+
+@media (max-width: 650px) {
+ .home {
+  .welcome {
+   > h2 {
+    font-size: 2.5em;
+   }
+  }
+
+  > a {
+   font-size: 2em;
+  }
+ }
+}
