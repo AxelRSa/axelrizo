@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel Rizo</title>
+    <link rel="stylesheet" href="index.css">
+    <link id="pageIcon" rel="shortcut icon" href="img/pageIconHome.png">
+  </head>
+  <body>
+    <div class="alertLandscape" id="alertLandscape">
+      <p>This page works better in portrait view.</p><img src="img/alertLandscape.png" alt="">
+    </div>
+    <div class="loader">
+      <div class="loader_blackCircle"></div>
+      <div class="loader_animation"></div>
+      <div class="loader_animation"></div>
+      <div class="loader_animation"></div>
+      <div class="loader_animation"></div>
+      <div class="loader_text">
+        <h1>Axel<span>Rizo </span></h1>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a class="link" id="homeLink" href="#home" onclick="menuOut()"> HOME </a></li>
+          <li><a id="aboutLink" href="#about" onclick="menuOut()">ABOUT </a></li>
+          <li><a href="#home" onclick="menuOut()">Axel <span id="rizo">Rizo</span> <span id="circle"></span></a></li>
+          <li><a id="projectsLink" href="#projects" onclick="menuOut()">PROJECTS</a></li>
+          <li><a id="contactLink" href="#contact" onclick="menuOut()">CONTACT</a></li>
+          <li> <a onclick="menu()"> 
+              <div> </div>
+              <div> </div>
+              <div> </div></a></li>
+          <li> </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="slider">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="home" id="home">
+      <div class="welcome">
+        <h2 class="welcomeTitle">Hello,<span class="welcomeTitleSpan"></span></h2>
+        <h2 class="welcomeTitle">My name is<span class="welcomeTitleSpan"></span></h2>
+        <h2 class="welcomeTitle">Axel <b>Rizo</b><span class="welcomeTitleSpan"></span></h2>
+      </div><a href="#projects" onclick="projects()">PROJECTS<span></span></a>
+    </div>
+    <div class="about" id="about">
+      <div class="aboutContainer"> 
+        <div class="aboutTop" id="about1"> 
+          <div class="aboutHtml top">
+            <canvas id="htmlCanvas" width="300" height="300"></canvas>
+          </div>
+          <div class="aboutCss bottom">
+            <canvas id="cssCanvas" width="300" height="300"></canvas>
+          </div>
+        </div>
+        <div class="aboutBottom" id="about2"> 
+          <div class="aboutPug top">
+            <canvas id="pugCanvas" width="300" height="300"></canvas>
+          </div>
+          <div class="aboutSass bottom">
+            <canvas id="sassCanvas" width="300" height="300"></canvas>
+          </div>
+        </div>
+        <div class="aboutCenter" id="about3">
+          <div class="aboutJs">
+            <canvas id="jsCanvas" width="300" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projects" id="projects">
+            <div class="projectContainer"> 
+              <h2>Mesk</h2><a href="pages/mesk/index.html" target="_blank"><img src="img/logo2.png" alt=""></a>
+              <p>An upgrade to a youtuber's webpage</p>
+              <div class="linksContainer"><a href="pages/mesk/index.html" target="_blank">My page<span> </span></a><a href="https://www.mesk.mx/" target="_blank">Original Page<span></span></a>
+              </div>
+            </div>
+            <div class="projectContainer"> 
+              <h2>Gamer Low Cost</h2><a href="pages/gamerLowCost/index.html" target="_blank"><img src="img/logo1.png" alt=""></a>
+              <p>My first proyect imiting Cyberpuerta</p>
+              <div class="linksContainer"><a href="pages/gamerLowCost/index.html" target="_blank">My page<span> </span></a><a href="https://www.cyberpuerta.mx/" target="_blank">Original Page<span></span></a>
+              </div>
+            </div>
+    </div>
+    <div class="contact" id="contact">
+      <div class="contactContainer">
+        <form action="https://formspree.io/f/mgepjrqo" method="POST" id="contactForm"> 
+          <div class="contactForm contactEmail">
+            <label for="">E-mail: </label>
+            <div class="contactInput">
+              <input name="e-mail" type="email" maxlength="75" required>
+            </div>
+          </div>
+          <div class="contactForm contactSubject"> 
+            <label for="">Subject:</label>
+            <div class="contactInput">
+              <input name="subject" type="text" maxlength="150" required>
+            </div>
+          </div>
+          <div class="contactForm contactMessage">
+            <label for="">Message:</label>
+            <div class="contactInput">
+              <textarea id="contactTextArea" name="message" required> </textarea>
+            </div>
+          </div>
+          <div class="contactSubmit"> 
+            <div class="contactBtn">
+              <button type="submit">Send</button>
+            </div>
+          </div>
+          <div id="status"></div>
+        </form>
+      </div>
+    </div>
+    <div class="sliderControl" id="sliderControl">
+          <svg class="sliderArrow left" id="sliderArrowLeft" aria-hidden="true" focusable="true" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" onclick="arrowLeft()">
+            <path fill="#fff" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
+          </svg>
+          <svg class="sliderPoint" onclick="slider1()" id="point1" height="100" width="100" viewBox="0 0 200 200">
+            <circle id="circle1" cx="100" cy="100" r="30" fill="#fff"></circle>
+          </svg>
+          <svg class="sliderPoint" onclick="slider2()" id="point2" height="100" width="100" viewBox="0 0 200 200">
+            <circle id="circle2" cx="100" cy="100" r="30" fill="#fff"></circle>
+          </svg>
+          <svg class="sliderPoint" onclick="slider3()" id="point3" height="100" width="100" viewBox="0 0 200 200">
+            <circle id="circle3" cx="100" cy="100" r="30" fill="#fff"></circle>
+          </svg>
+          <svg class="sliderArrow right" id="sliderArrowRight" aria-hidden="true" focusable="true" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" onclick="arrowRight()">
+            <path fill="#fff" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
+          </svg>
+    </div>
+    <script src="index.js"></script>
+    <script src="email.js"> </script>
+  </body>
+</html>
